@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+package routeguide;
+
+service RouteGuide {
+  rpc GetHTML(stream Doc) returns (Result) {}
+}
+
+message Doc {
+  bytes HTML = 1;
+  string Collection = 2;
+}
+
+message Result {
+  string answer = 1;
+}
